@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block cabeza %}
+<title>Iniciar sesion</title>
+{% endblock %}
+{% block content %}
+    <article class="post">
+        <header>
+            <form method="POST"> 
+                {% csrf_token %}
+                {{form.as_p}}
+                <button>Registrarse</button>
+            </form>
+    </article>
+{% endblock %}

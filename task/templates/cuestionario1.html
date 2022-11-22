@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block cabeza %}
+<title>Cuestionario</title>
+{% endblock %}
+{% block content %}
+    <article class="post">
+        <p>Datos del Turista</p>
+            <form method="POST"> 
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Siguiente">
+            </form>
+    </article>
+{% endblock %}

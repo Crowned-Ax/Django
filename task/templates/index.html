@@ -1,0 +1,79 @@
+
+{% extends 'base.html' %}
+{% block cabeza %}
+	<title>Home</title>
+{% endblock %}
+{% block content %}
+	{% load static %}
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2><a href="#">¿Sabe usted que tan atractivo es Pereira?</a></h2>
+				<p>Acontinuacion le mostraremos los ultimos datos en cuanto al flujo turistico dirigido a la ciudad de Pereira</p>
+			</div>
+		</header>
+		<img src="{% static 'img/cable.jpg' %}" class="img-articulo" />
+		<p></p>
+		<p>Solo en el año actual, 2022, la ciudad de pereira ha recibido mas de {{ Turi.Numero_T_Nacional_Year }} 
+			visitantes de otras partes del pais y {{ Turi.Numero_T_Interacional_Year }}  desde el exterior. Segun los datos actuales, 
+			Pereira recibe al mes un promedio de {{Turi.Promedio_T_por_mes_nacional}} visitantes de origen nacional y {{ Turi.Promedio_T_por_mes_internacional}} de internacional </p>
+		<footer>
+			<ul class="actions">
+				<li><a href="#" class="button large">Continuar leyendo</a></li>
+			</ul>
+			<ul class="stats">
+				<li><a href="#">General</a></li>
+				<li><a href="#" class="icon solid fa-heart">28</a></li>
+				<li><a href="#" class="icon solid fa-comment">128</a></li>
+			</ul>
+		</footer>
+	</article>
+
+	<!-- Post -->
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2><a href="#">¿Conoces los lugares mas visitados en Pereira?</a></h2>
+				<p></p>
+			</div>
+		</header>
+		<img src="{% static 'img/cable.jpg' %}" class="img-articulo" />
+		<p></p>
+		<footer>
+			<ul class="actions">
+				<li><a href="single.html" class="button large">Continue Reading</a></li>
+			</ul>
+			<ul class="stats">
+				<li><a href="#">General</a></li>
+				<li><a href="#" class="icon solid fa-heart">28</a></li>
+				<li><a href="#" class="icon solid fa-comment">128</a></li>
+			</ul>
+		</footer>
+	</article>
+
+	<!-- About -->
+	<section class="blurb">
+		<h2>About</h2>
+		<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+		<ul class="actions">
+			<li><a href="#" class="button">Learn More</a></li>
+		</ul>
+	</section>
+
+	<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+			<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. img: <a href="http://unsplash.com">Unsplash</a>.</p>
+	</section>
+
+	</section>
+{% endblock %}
+
+
+

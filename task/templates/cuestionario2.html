@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block cabeza %}
+<title>Cuestionario</title>
+{% endblock %}
+{% block content %}
+    <article class="post">
+        <p>Encuesta</p>
+            <form method="POST"> 
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" name="save_next" value="save_next">Guardar y seguir</button>
+                <button type="submit" name="save_exit" value="save_exit">Guardar y salir</button>
+            </form>
+
+    </article>
+{% endblock %}

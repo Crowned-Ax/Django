@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block cabeza %}
+<title>Iniciar sesion</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+    <article class="post">
+            <form method="POST"> 
+                {% csrf_token %}
+                {{form.as_p}}
+                <button>Ingresar</button>
+            </form>
+            <a href="{% url 'registr' %}">¿No tienes una cuenta aun?</a>
+    </article>
+{% endblock %}

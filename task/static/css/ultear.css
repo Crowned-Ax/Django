@@ -1,0 +1,10 @@
+.img-articulo{
+    display: block;
+    width: 100%;
+    height: 400px;
+
+}
+.fondo{
+    background-image: url("../img/cable.jpg");
+
+}
