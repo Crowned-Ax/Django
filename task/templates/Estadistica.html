@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block cabeza %}
-<title>Iniciar sesion</title>
+<title>Estadisticas</title>
 {% endblock %}
 {% block content %}
 {% load static %}
     <article class="post">
             <table>
-                <th>Estadisticas del flujo de turistas a la ciudad de Pereira</th>
+                <th colspan="6">Estadisticas del flujo de turistas a la ciudad de Pereira</th>
                 <tr>
                     <td>Turistas Nacionales (al año)</td>
                     <td>Turistas Internacionales (al año)</td>
@@ -20,29 +20,35 @@
                     <td>{{ Turi.Numero_T_Internacional_Year }}  </td>
                     <td>{{Turi.Promedio_T_por_mes_nacional}}</td>
                     <td>{{ Turi.Promedio_T_por_mes_internacional}}</td>
-                    <td>Turi.Promedio_gastos</td>
+                    <td>{{Turi.Promedio_gastos_G}}</td>
+                    <td></td>
                 </tr>
             </table>
             <table>
-                <th>Datos del flujo de turistas a la ciudad de Pereira por mes</th>
-                {% for i in range(12) %}
-                    <tr>
-                        <td>{{PorMes[0][i]}} </td>
-                    </tr>
-                    {% for i in range(12) %}
-                        <tr>
-                            <td>{{PorMes[1][i]}} </td>
-                        </tr>
+                <th colspan="12">Datos del flujo de turistas a la ciudad de Pereira por mes</th>
+                <tr>
+                    {% for a in Turi.meses %}
+                        <td>{{ a }}</td>
                     {% endfor %}
-                {% endfor %}
+                </tr>
+                <tr>
+                    {% for j in Turi.Cantidad_PerMonth %}
+                        <td>{{j}} </td>
+                    {% endfor %}
+            </tr>
             </table>
             <table>
-                <th>Otros datos</th>
+                <th colspan="3">Otros datos</th>
                 <tr>
-                    <td>Articulos comunes que traen los visitantes</td>
-                    <td>Lugares mas visitados</td>
+                    <td>Top 5 lugares mas visitados</td>
                     <td>Medios de transportes mas usados</td>
                 </tr>
+                {%for k, h in Turi.tabla3 %}
+                    <tr>
+                        <td>{{k}}</td>
+                        <td>{{h}}</td>
+                    </tr>
+                {%endfor%}
             </table>
 
     </article>
