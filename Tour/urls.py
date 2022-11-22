@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from task import views as tv
-from task.models import Turista
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', tv.hello, name="Home"),

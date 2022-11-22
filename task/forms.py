@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from models import *
+from task.models import *
 from django import forms
 
 class CreateTurista(ModelForm):

@@ -27,8 +27,8 @@ class Cuestionario(models.Model):
     fecha_salida = models.DateField()
     ciudad_destino = models.CharField(max_length=255)
     destino = models.CharField(max_length=255)
-    transportes = ["carro","moto","vehiculo alquilado","bus","taxi" ]
-    T_transporte = models.CharField(max_length=30,choices=transportes)
+    transportes = [("C","carro"),("M","moto"),("V-A","vehiculo alquilado"),("B","bus"),("T","taxi") ]
+    T_transporte = models.CharField(max_length=5,choices=transportes)
     Aprox_gasto = models.IntegerField()
     equipo = models.TextField()
     

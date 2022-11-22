@@ -1,5 +1,5 @@
 from django import forms
-from models import Account
+from cuenta.models import Account
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm

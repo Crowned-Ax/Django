@@ -5,10 +5,10 @@ from cuenta.forms import *
 from django.contrib import messages
 #
 from django.contrib.auth.forms import UserCreationForm
-from forms import *
+from task.forms import *
 
 #from .models import *
-from custom import *
+from task.custom import *
 #
 
 def Mostrar_estadisticas(request):
