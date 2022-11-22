@@ -139,7 +139,7 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, "task/static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "task/static"),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
