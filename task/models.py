@@ -1,11 +1,18 @@
 from django.db import models
 from cuenta.models import Account
 
+class CharLower(models.CharField):
+    def __init__(self, *args, **kwargs):
+        super(CharLower, self).__init__(*args, **kwargs)
+
+    def get_prep_value(self, value):
+        return str(value).lower()
+
 class Turista(models.Model):
     cedula = models.IntegerField(primary_key=True)
-    nombre = models.CharField(max_length=255)
+    nombre = CharLower(max_length=255)
     edad = models.IntegerField()
-    pais = models.CharField(max_length=255)
+    pais = CharLower(max_length=255)
     form_pago = [('D','Debito'),('C','Credito'),('E','Efectivo')]
     forma_pago = models.CharField(max_length=1, choices=form_pago)
     correo = models.CharField(max_length=255)
@@ -25,8 +32,8 @@ class Cuestionario(models.Model):
     acompanante = models.BooleanField()
     fecha_llegada = models.DateField()
     fecha_salida = models.DateField()
-    ciudad_destino = models.CharField(max_length=255)
-    destino = models.CharField(max_length=255)
+    ciudad_destino = CharLower(max_length=255)
+    destino = CharLower(max_length=255)
     transportes = [("C","carro"),("M","moto"),("V-A","vehiculo alquilado"),("B","bus"),("T","taxi") ]
     T_transporte = models.CharField(max_length=5,choices=transportes)
     Aprox_gasto = models.IntegerField()
