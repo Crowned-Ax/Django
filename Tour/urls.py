@@ -27,4 +27,5 @@ urlpatterns = [
     path('cuenta/', tv.ver_cuenta, name="cuenta"),
     path('Encuesta/P1', tv.R_Turista, name="EnTurista"),
     path('Encuesta/P2/<cedu>', tv.Create_Cuestionario, name="EnQuest"),
+    path('estadisticas/', tv.Mostrar_estadisticas, name="estadisticas"),
 ]
